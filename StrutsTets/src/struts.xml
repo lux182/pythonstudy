@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+  <struts>
+      <package name="struts2" namespace="/mystruts"
+          extends="struts-default">
+          
+          <action name="select" class="action.ActionSelect">
+              <result name="select">/chaxun.jsp</result>
+               <result name="fail">/fail.jsp</result>
+          </action>
+          <action name="SelectWithParam" class="action.ActionSelectWithParam">
+              <result name="success">/update.jsp</result>
+               <result name="fail">/fail.jsp</result>
+          </action>
+          
+          <action name="update" class="action.ActionUpdate">
+              <result name="update">/success.jsp</result>
+               <result name="fail">/fail.jsp</result>
+          </action>
+          
+          <action name="Delete" class="action.ActionDelete">
+              <result name="delete">/success.jsp</result>
+               <result name="fail">/fail.jsp</result>
+          </action>
+          
+          <action name="updateTurn" class="action.ActionupdateTurn">
+              <result name="updateTurn">/update.jsp</result>
+               <result name="fail">/fail.jsp</result>
+          </action>
+          
+          <action name="insert" class="action.ActionInsert">
+              <result name="insert">/success.jsp</result>
+               <result name="fail">/fail.jsp</result>
+          </action>
+          
+           
+      </package>
+  </struts>
