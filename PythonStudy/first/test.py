@@ -1,0 +1,9 @@
+#-*- coding:GBK -*-
+'''
+Created on 2013Äê8ÔÂ14ÈÕ
+
+@author: saico
+'''
+import sys
+path = sys.path
+print(path)

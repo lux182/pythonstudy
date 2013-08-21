@@ -1,0 +1,4 @@
+#-*- coding:GBK -*-
+print ("»¶Ó­!")
+input("Press enter key to close this window")
+
