@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JDialog;
-import javax.swing.JFrame;
 
 public class StorageManageDialog extends JDialog implements ActionListener {
 
@@ -26,9 +25,10 @@ public class StorageManageDialog extends JDialog implements ActionListener {
 	public javax.swing.JTable storageListTbl;
 
 	public static void main(String[] args) {
-		
-      new StorageManageDialog(new Frame("test"),true);
+
+		new StorageManageDialog(new Frame("test"), true);
 	}
+
 	/**
 	 * Creates new form StorageManageDialog
 	 */

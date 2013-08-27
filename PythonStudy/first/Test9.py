@@ -21,4 +21,4 @@ class Word(str):
     def __le__(self, other):
         return len(self) <= len(other)
 
-print(Word("dun") > Word("wei  "))
+print(Word("dund") > Word("wei  "))
