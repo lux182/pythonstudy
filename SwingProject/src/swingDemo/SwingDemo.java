@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.util.Calendar;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -14,40 +15,44 @@ import javax.swing.JLabel;
 public class SwingDemo extends JFrame implements ActionListener {
 
 	public static void main(String[] args) {
-		JFrame.setDefaultLookAndFeelDecorated(true);//Ìá¹©´°¿Ú×°ÊÎ(Èç±ß½ç¡¢¹Ø±Õ´°¿ÚµÄĞ¡²¿¼ş¡¢±êÌâ¡­¡­)
-		JFrame frame = new SwingDemo();//´´½¨JFrame¶ÔÏó,³õÊ¼²»¿É¼û
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//ÉèÖÃ¿ò¼Ü¹Ø±Õ°´Å¥ÊÂ¼ş
-		frame.pack();//Ñ¹Ëõ¿ò¼ÜµÄÏÔÊ¾ÇøÓò
-		frame.setVisible(true);//ÏÔÊ¾¿ò¼ÜÖ÷´°¿Ú
+		JFrame.setDefaultLookAndFeelDecorated(true);//æä¾›çª—å£è£…é¥°(å¦‚è¾¹ç•Œã€å…³é—­çª—å£çš„å°éƒ¨ä»¶ã€æ ‡é¢˜â€¦â€¦)
+		JFrame frame = new SwingDemo();//åˆ›å»ºJFrameå¯¹è±¡,åˆå§‹ä¸å¯è§
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//è®¾ç½®æ¡†æ¶å…³é—­æŒ‰é’®äº‹ä»¶
+		frame.setSize(400, 300);
+		frame.pack();//å‹ç¼©æ¡†æ¶çš„æ˜¾ç¤ºåŒºåŸŸ
+		frame.setVisible(true);//æ˜¾ç¤ºæ¡†æ¶ä¸»çª—å£
+		JDialog dialog = new JDialog(frame, true);
+		dialog.setSize(200, 100);
+		dialog.setVisible(true);
 	}
-	JButton b1;//ÉùÃ÷°´Å¥¶ÔÏó
+	JButton b1;//å£°æ˜æŒ‰é’®å¯¹è±¡
 
-	JLabel l1, l2;//ÉêÃ÷±êÇ©¶ÔÏó
+	JLabel l1, l2;//ç”³æ˜æ ‡ç­¾å¯¹è±¡
 
-	SwingDemo() {//¶¨Òå¹¹Ôì·½·¨
-		super("SwingÓ¦ÓÃÊµÀı");//µ÷ÓÃ¸¸Àà¹¹Ôì·½·¨
-		l1 = new JLabel("Ò»¸öGUIÓ¦ÓÃ³ÌĞòµÄÀı×Ó", JLabel.CENTER);//¶¨Òå±êÇ©,ÎÄ×Ö¾ÓÖĞ
-		l2 = new JLabel("");//¶¨ÒåÎŞÎÄ×Ö±êÇ©
-		b1 = new JButton("ÏÖÔÚÊ±¼ä[T]");//¶¨Òå°´Å¥
-		b1.setMnemonic(KeyEvent.VK_T);//ÉèÖÃ°´Å¥¿ì½İ¼ü
-		b1.setActionCommand("time");//ÉèÖÃ¿ØÖÆÃû
-		b1.addActionListener(this);//×¢²á°´Å¥ÊÂ¼ş
-		add(l1, BorderLayout.NORTH);//Ìí¼Ó±êÇ©l1
-		add(l2, BorderLayout.CENTER);//Ìí¼Ó±êÇ©l2
-		add(b1, BorderLayout.SOUTH);//Ìí¼Ó±êÇ©b1
+	SwingDemo() {//å®šä¹‰æ„é€ æ–¹æ³•
+		super("Swingåº”ç”¨å®ä¾‹");//è°ƒç”¨çˆ¶ç±»æ„é€ æ–¹æ³•
+		l1 = new JLabel("ä¸€ä¸ªGUIåº”ç”¨ç¨‹åºçš„ä¾‹å­", JLabel.CENTER);//å®šä¹‰æ ‡ç­¾,æ–‡å­—å±…ä¸­
+		l2 = new JLabel("");//å®šä¹‰æ— æ–‡å­—æ ‡ç­¾
+		b1 = new JButton("ç°åœ¨æ—¶é—´[T]");//å®šä¹‰æŒ‰é’®
+		b1.setMnemonic(KeyEvent.VK_T);//è®¾ç½®æŒ‰é’®å¿«æ·é”®
+		b1.setActionCommand("time");//è®¾ç½®æ§åˆ¶å
+		b1.addActionListener(this);//æ³¨å†ŒæŒ‰é’®äº‹ä»¶
+		add(l1, BorderLayout.NORTH);//æ·»åŠ æ ‡ç­¾l1
+		add(l2, BorderLayout.CENTER);//æ·»åŠ æ ‡ç­¾l2
+		add(b1, BorderLayout.SOUTH);//æ·»åŠ æ ‡ç­¾b1
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {//¶Ô°´Å¥Òı·¢ÊÂ¼ş±à³Ì
+	public void actionPerformed(ActionEvent e) {//å¯¹æŒ‰é’®å¼•å‘äº‹ä»¶ç¼–ç¨‹
 		// TODO Auto-generated method stub
-		//»ñÈ¡ÏµÍ³ÈÕÆÚ
+		//è·å–ç³»ç»Ÿæ—¥æœŸ
 		Calendar c1 = Calendar.getInstance();
-		//²¶»ñ°´Å¥ÊÂ¼ş
+		//æ•è·æŒ‰é’®äº‹ä»¶
 		if (e.getActionCommand().equals("time") ) {
-			//ÉèÖÃ±êÇ©ÎÄ×Ö
-			l2.setText("ÏÖÔÚµÄÊ±¼äÊÇ" + c1.get(Calendar.HOUR_OF_DAY) + "Ê±"
-					+ c1.get(Calendar.MINUTE) + "·Ö"+c1.get(Calendar.SECOND)+"Ãë");
-			//ÉèÖÃ±êÇ©ÎÄ×Ö¾ÓÖĞ¶ÔÆë
+			//è®¾ç½®æ ‡ç­¾æ–‡å­—
+			l2.setText("ç°åœ¨çš„æ—¶é—´æ˜¯" + c1.get(Calendar.HOUR_OF_DAY) + "æ—¶"
+					+ c1.get(Calendar.MINUTE) + "åˆ†"+c1.get(Calendar.SECOND)+"ç§’");
+			//è®¾ç½®æ ‡ç­¾æ–‡å­—å±…ä¸­å¯¹é½
 			l2.setHorizontalAlignment(JLabel.CENTER);
 		} else {
 			System.exit(0);

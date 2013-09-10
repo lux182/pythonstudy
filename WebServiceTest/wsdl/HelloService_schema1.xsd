@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://oseye.net/" xmlns:tns="http://oseye.net/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="SayHello" type="tns:SayHello"/>
+
+  <xs:element name="SayHelloResponse" type="tns:SayHelloResponse"/>
+
+  <xs:complexType name="SayHello">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SayHelloResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
